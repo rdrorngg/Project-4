@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Project 4</title>
+  </head>
+  <body>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Project 4</strong>
+        </a>
+      </div>
+    </div>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">와디즈 예측</h1>
+          <br>
+          <p class="lead text-muted">
+          AI 17 임동휘
+          </p>
+          <br>
+          <br>
+          <ul style="list-style-type: none;">
+            <form method="GET" action="/predict">
+              <select name="category">
+                <option value="1"> 푸드 </option>
+                <option value="2"> 홈·리빙 </option>
+                <option value="3"> 출판 </option>
+                <option value="4"> 베이비·키즈 </option>
+                <option value="5"> 스포츠·모빌리티 </option>
+                <option value="6"> 패션·잡화 </option>
+                <option value="7"> 뷰티 </option>
+                <option value="8"> 컬쳐·아티스트 </option>
+                <option value="9"> 테크·가전 </option>
+                <option value="10"> 캐릭터·굿즈 </option>
+                <option value="11"> 기부∙캠페인 </option>
+                <option value="12"> 레저·아웃도어 </option>
+                <option value="13"> 반려동물 </option>
+                <option value="14"> 클래스·컨설팅 </option>
+                <option value="15"> 후원 </option>
+                <option value="16"> 게임·취미 </option>
+                <option value="17"> 여행·숙박 </option>
+                <option value="18"> 모임(사용불가) </option>
+              </select>
+              <select name="type">
+                <option value="1"> REWARD </option>
+                <option value="2"> PREORDER </option> 
+              </select>
+              <input type="number" name="goal_amount" placeholder="목표 금액">
+              <button type="submit" class="btn btn-light">Predict</button>
+            </form>
+            <div>
+              <p>
+                {% if pred == '성공' %}
+                    <h3> Good</h3>
+                {% elif pred == '실패' %}
+                    <h3> Bad.. </h3>
+                {% else %}
+                    <h3> Predict </h3>
+                {% endif %}
+              </p>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
